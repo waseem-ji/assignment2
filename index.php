@@ -86,14 +86,21 @@
             case("SquareRoot"):
                 $result = $number1**0.5;
                 echo "Sqaure root = " . $result;
+                break;
             default:
                 echo "Enter two numbers";
+                break;
                 
         }
     ?>
     <hr>
-    <h4>Unit conversion</h4>
-    <h5>Length conversion</h5>
-    
+    <h3>Unit Conversion</h3>
+    <ul>
+        <li><a href="length.php">Length</a></li>
+        <li><a href="temperature.php">Temperature</a></li>
+        <li><a href="area.php">Area</a></li>
+        <li><a href="weight.php">Weight</a></li>
+        <li><a href="time.php">Time</a></li>
+    </ul>
 </body>
 </html>
