@@ -80,13 +80,27 @@
                 echo " Division = " . $result;
                 break;
             case("Square"):
-                $result = $number1 **2;
-                echo "Square = " . $result;
-                break;
+                if(!empty($_POST["number1"])){
+                    $result = $number1 **2;
+                    echo "Square = " . $result;
+                    break;
+                }
+                else{
+                    $result = $number2 **2;
+                    echo "Square = " . $result;
+                    break;
+                }
             case("SquareRoot"):
-                $result = $number1**0.5;
-                echo "Sqaure root = " . $result;
-                break;
+                if(!empty($_POST["number1"])){
+                    $result = $number1 **0.5;
+                    echo "Square = " . $result;
+                    break;
+                }
+                else{
+                    $result = $number2 **0.5;
+                    echo "Square = " . $result;
+                    break;
+                }
             default:
                 echo "Enter two numbers";
                 break;
