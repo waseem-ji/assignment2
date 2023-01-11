@@ -86,6 +86,7 @@
             }
         ?>
     </div>
-
+    <br>
+    <a href="index.php">Click here to go back</a>
 </body>
 </html>
