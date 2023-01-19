@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Conversion</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/convert.css">
 </head>
 <body>
     <?php
@@ -51,51 +53,67 @@
             return $b;
         }
     ?>
-    <div>
+    <div class="container conv">
         <h3>Time Convertor</h3>
         <form method = "post">
-            <div>
-                <input type="text" name="number" value="<?php echo "$number"?>">
-                <label for="fromUnit"> Convert From</label>
-                <select name="fromUnit" id="">
-                    <option value="microsecond">Microsecond </option>
-                    <option value="millisecond">Millisecond</option>
-                    <option value="second">Second</option>
-                    <option value="minute">Minute</option>
-                    <option value="hour">Hour</option>
-                    <option value="day">Day</option>
-                    <option value="week">Week</option>
-                    <option value="month">Month</option>
-                    <option value="year">Year</option>
-                </select>
-                <label for="toUnit"> Convert to</label>
-                <select name="toUnit">
-                    <option value="microsecond">Microsecond </option>
-                    <option value="millisecond">Millisecond</option>
-                    <option value="second">Second</option>
-                    <option value="minute">Minute</option>
-                    <option value="hour">Hour</option>
-                    <option value="day">Day</option>
-                    <option value="week">Week</option>
-                    <option value="month">Month</option>
-                    <option value="year">Year</option>
-                </select>
+            <div class="main-box">
+                <div class="input-number">
+                    <input type="text" name="number" value="<?php echo "$number"?>" placeholder="Enter number">
+                </div>
+                <div class="select-units">
+                    <div class="select-from">
+                        <label for="fromUnit"> Convert From</label>
+                        <select name="fromUnit" id="">
+                            <option value="microsecond">Microsecond </option>
+                            <option value="millisecond">Millisecond</option>
+                            <option value="second">Second</option>
+                            <option value="minute">Minute</option>
+                            <option value="hour">Hour</option>
+                            <option value="day">Day</option>
+                            <option value="week">Week</option>
+                            <option value="month">Month</option>
+                            <option value="year">Year</option>
+                        </select>
+                    </div>
+                    <div class="select-to">
+                        <label for="toUnit"> Convert to</label>
+                        <select name="toUnit">
+                            <option value="microsecond">Microsecond </option>
+                            <option value="millisecond">Millisecond</option>
+                            <option value="second">Second</option>
+                            <option value="minute">Minute</option>
+                            <option value="hour">Hour</option>
+                            <option value="day">Day</option>
+                            <option value="week">Week</option>
+                            <option value="month">Month</option>
+                            <option value="year">Year</option>
+                        </select>
+                    </div>
+                    <input type="submit" name="submit" value="Get Results" class="submit">
+                </div>
             </div>
-            <br>
+      
 
-            <input type="submit" name="submit" value="Get Results">
         </form>
     </div>
-    <div>
-        
+    <div class="container ">
         <?php
-            if(isset($_POST['submit'])){
-                echo "<h3>Result</h3>";
-                echo "$number $fromUnit is $result $toUnit";
-            }
-        ?>
+                if(isset($_POST['submit'])){
+                    echo "<div class='results'>";
+                    echo "<h3>Result</h3>";
+                    echo "<p> &nbsp  $number $fromUnit is $result $toUnit</p>";
+                    echo "</div>";
+                }
+            ?>
+     
+     <br>
+     
     </div>
-            <br>
-            <a href="index.php">Click here to go back</a>
+    <div class="container">
+        <div class="backlink">
+            <a href="index.php" class="goBack">Click here to go back</a>
+        </div>
+
+    </div>
 </body>
 </html> 

@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Length Conversion</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/convert.css">
 </head>
 <body>
     <?php
@@ -51,50 +53,72 @@
         return $b;
     }
     ?>
-    <div>
-        <h3>Length Converter</h3>
+        
+        
+        <div class="container conv ">
+        <h2>Length Converter</h2>
         <form  method = "post">
-            <div>
-                <input type="text" name="number" value="<?php echo"$number" ?>">
-                <label for="fromUnit"> Convert From</label>
-                <select name="fromUnit" id="">
-                    <option value="millimeters">millimeter</option>
-                    <option value="centimeters">centimeter</option>
-                    <option value="meters">meter</option>
-                    <option value="kilometers">kilometer</option>
-                    <option value="inches">Inch</option>
-                    <option value="yards">Yard</option>
-                    <option value="foot">Foot</option>
-                    <option value="miles">Mile</option>
-                </select>
-                <label for="toUnit"> Convert to</label>
-                <select name="toUnit">
-                    <option value="millimeters">millimeter</option>
-                    <option value="centimeters">centimeter</option>
-                    <option value="meters">meter</option>
-                    <option value="kilometers">kilometer</option>
-                    <option value="inches">Inch</option>
-                    <option value="yards">Yard</option>
-                    <option value="foot">Foot</option>
-                    <option value="miles">Mile</option>
-                </select>
+
+            <div class="main-box">
+                    <div class="input-number">
+                        <input type="number" name="number" value="<?php echo"$number" ?>" class="input-box" placeholder="Enter number">
+                    </div>
+      
+
+                    <div class="select-units">
+                        <div class="select-from">
+                            <label for="fromUnit"> Convert From</label>
+                            <select name="fromUnit" id="">
+                                <option value="millimeters">millimeter</option>
+                                <option value="centimeters">centimeter</option>
+                                <option value="meters">meter</option>
+                                <option value="kilometers">kilometer</option>
+                                <option value="inches">Inch</option>
+                                <option value="yards">Yard</option>
+                                <option value="foot">Foot</option>
+                                <option value="miles">Mile</option>
+                            </select>
+
+                        </div>
+                        <div class="select-to">
+                            <label for="toUnit"> Convert to</label>
+                            <select name="toUnit">
+                                <option value="millimeters">millimeter</option>
+                                <option value="centimeters">centimeter</option>
+                                <option value="meters">meter</option>
+                                <option value="kilometers">kilometer</option>
+                                <option value="inches">Inch</option>
+                                <option value="yards">Yard</option>
+                                <option value="foot">Foot</option>
+                                <option value="miles">Mile</option>
+                            </select>
+
+                        </div>
+                        <input type="submit" name="submit" value="Get Results" class="submit">
+
+                    </div> 
             </div>
-            <br>
-
-            <input type="submit" name="submit" value="Get Results">
+                  
         </form>
+    </div>
+    <div class="container ">
+        <?php
+                if(isset($_POST['submit'])){
+                    echo "<div class='results'>";
+                    echo "<h3>Result</h3>";
+                    echo "<p> &nbsp  $number $fromUnit is $result $toUnit</p>";
+                    echo "</div>";
+                }
+            ?>
+     
+     <br>
+     
+    </div>
+    <div class="container">
+        <div class="backlink">
+            <a href="index.php" class="goBack">Click here to go back</a>
+        </div>
 
     </div>
-    <div>
-        <h3>Results</h3>
-        <?php
-            if(isset($_POST['submit'])){
-                echo "<h3>Result</h3>";
-                echo "$number $fromUnit is $result $toUnit";
-            }
-        ?>
-    </div>
-    <br>
-    <a href="index.php">Click here to go back</a>
 </body>
 </html>

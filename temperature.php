@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature Conversion</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/convert.css">
 </head>
 <body>
     <?php
@@ -26,28 +28,38 @@
             // echo "$fromUnit" . "  " . "$toUnit";
     ?>
     
-    <div>
+    <div class="container conv">
         <h3>Temperature Converter</h3>
         <form  method = "post">
-            <div>
-                <input type="text" name="number" value="<?php echo"$number" ?>">
-                <label for="fromUnit"> Convert From</label>
-                <select name="fromUnit" id="">
-                    <option value="kelvin">Kelvin</option>
-                    <option value="farenheit">Farenhiet</option>
-                    <option value="celsius">Celsius</option>
-                </select>
+            <div class="main-box">
+                <div class="input-number">
+                    
+                    <input type="text" id= "input-number" name="number" value="<?php echo"$number" ?>" placeholder="Enter number">
+                </div>
+                <div class="select-from">
+                    <label for="fromUnit"> Convert From</label>
+                    <select name="fromUnit" id="">
+                        <option value="kelvin">Kelvin</option>
+                        <option value="farenheit">Farenhiet</option>
+                        <option value="celsius">Celsius</option>
+                    </select>
+
+                </div>
             </div>
             <br>
+            <div class="container submit-temp">
 
-            <input type="submit" name="submit" value="Get Results">
+                <input type="submit" name="submit" value="Get Results">
+            </div>
         </form>
 
     </div>
-    <div>
-        <h3>Results</h3>
+    <div class="container ">
+        
         <?php
             if (isset($_POST['submit'])){
+                echo "<div class='results '>";
+                echo "<h3>Result</h3>";
                 $option = TEMPERATURE_TO_CELSIUS[$fromUnit];
                 switch($option){
                     case 1:{
@@ -72,11 +84,16 @@
                         echo"Incorrect option";
                         
                 }
+                echo "</div>";
             }
  
     ?>
     </div>
-    <br>
-    <a href="index.php">Click here to go back</a>
+    <div class="container">
+        <div class="backlink">
+            <a href="index.php" class="goBack">Click here to go back</a>
+        </div>
+
+    </div>
 </body>
 </html>

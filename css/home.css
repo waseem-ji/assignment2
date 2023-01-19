@@ -1,0 +1,164 @@
+body {
+    background-color: azure;
+    margin: 0;
+    padding: 0;
+}
+input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+    .error{
+        color:red;
+    }
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+.clearfix { display: block; }
+/* close commented backslash hack */
+/* Navigation Menu */
+.navigation{
+
+    /* padding: 20px; */
+    padding-bottom: 0;
+}
+
+.navigation ul {
+    padding-bottom: 0;
+}
+.navigation li {
+    list-style: none;
+    float: left;
+    margin-right: 5px;
+}
+.navigation a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    border: 1px solid black;
+}
+header {
+    background-color: rgb(180, 223, 223);
+    border-bottom: 3px solid greenyellow;
+    padding-top: 20px;
+    padding-left: 20px;
+    /* height: 150px; */
+}
+
+.container {
+ 
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+/* ------------ */
+/* Form styles */
+.Calc{
+    padding: 20px;
+    background-color: aliceblue;
+}
+.Calc h3 {
+    font-size: 140%;
+}
+.op-btn {
+    background-color: aqua;
+    border-radius: 12px;
+    box-shadow:  4px 4px 3px black;
+    width: 80px;
+    height: 40px;
+    padding: 2px;
+    margin: 4px;
+}
+.Calc__top {
+    display: flex;
+    margin: 0 auto;
+}
+.Calc__entry {
+    width:55%;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+}
+.Calc__entry input[type="number"] {
+ max-width: 50%;
+ height: 40px;
+ margin-bottom: 5px;
+ margin: 10px;
+}
+.Calc__bop{
+    width:45%;
+    float: right;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.Calc__bot {
+    width: 55%;
+}
+.Calc__aop {
+     /* width: 55%; */
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    
+}
+.Calc__aop input {
+    margin-right: 20px;
+}
+
+/* Result Styling */
+
+.result {
+    /* background-color: rgb(245, 245, 245); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding-bottom: 20px;
+}
+
+.result__box {
+    margin: 5px;
+    padding: 10px;
+    width: 250px;
+    /* background-color: aquamarine; */
+    border: 1px solid rgb(222, 173, 173);
+    border-radius: 8px;
+    box-shadow: inset 10px 4px  5px rgba(0, 0, 0, 0.5),8px 5px 6px rgba(0, 0, 0, 0.4);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.result__box span {
+    font-size: 130%;
+    text-transform: uppercase;
+
+}
+
+footer {
+    display: flex;
+    margin: auto 0 ;
+    font-size: 70%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+   
+}
